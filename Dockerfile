@@ -23,6 +23,7 @@ RUN conda install \
 	jupyter=1.0.0 \
 	pandas \
 	matplotlib \
+	xlrd=1.2.0 \
 && conda clean --all
 # RUN conda install pytorch torchvision -c pytorch \
 # && conda clean --all
@@ -34,7 +35,10 @@ RUN pip install --no-cache-dir --upgrade \
     intel-tensorflow==1.12.0 \
     featexp==0.0.5 \
     lime==0.1.1.32 \
-    gym==0.9.6
+    gym==0.9.6 \
+    recommonmark==0.5.0 \
+    sphinx-markdown-tables \
+
 
 # check if the installations were successful
 RUN python -c 'import xgboost' 
