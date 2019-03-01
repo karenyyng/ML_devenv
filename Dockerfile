@@ -5,7 +5,7 @@
 # then navigate to your local browser and go to the url:
 # 127.0.0.1:8888
 # ======================================================================
-FROM karenyng/miniconda3_devenv:latest
+FROM continuumio/miniconda3:latest 
 MAINTAINER Karen Ng <karen.yyng@gmail.com>
 
 RUN conda config --add channels conda-forge
