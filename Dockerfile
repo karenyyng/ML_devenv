@@ -37,7 +37,9 @@ RUN pip install --no-cache-dir --upgrade \
     lime==0.1.1.32 \
     gym==0.9.6 \
     recommonmark==0.5.0 \
-    sphinx-markdown-tables
+    sphinx-markdown-tables \
+    neovim==0.3.1 \
+    pynvim==0.3.2
 
 # check if the installations were successful
 RUN python -c 'import xgboost' 
