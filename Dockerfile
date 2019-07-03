@@ -10,14 +10,16 @@ MAINTAINER Karen Ng <karen.yyng@gmail.com>
 
 RUN conda config --add channels conda-forge
 RUN conda upgrade -y conda && conda clean --all
-RUN conda install -c intel intelpython3_core=2019 \
+RUN conda install -c intel intelpython3_core=2019.4 \
+	python=3.6.8\
 	scikit-learn  \
     && conda clean --all
 RUN python -c 'import numpy'
 
-RUN conda install \     
-	pyarrow=0.11.1 \
-	bokeh=1.0.4 \
+RUN conda install -c conda-forge \     
+	pyarrow=0.13.0 \
+	plotly=3.6.1 \
+	dash=0.43.0 \
 	pytest=4.1.1 \ 
 	sphinx \
 	jupyter=1.0.0 \
@@ -37,7 +39,7 @@ RUN pip install --no-cache-dir --upgrade \
     lime==0.1.1.32 \
     gym==0.9.6 \
     recommonmark==0.5.0 \
-    sphinx-markdown-tables
+    sphinx-markdown-tables 
 
 # check if the installations were successful
 RUN python -c 'import xgboost' 
