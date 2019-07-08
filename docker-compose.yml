@@ -7,6 +7,6 @@ services:
   ML_devenv: 
     image: karenyng/ml_devenv:latest
     volumes:
-      - ~/Documents/Projects/:/root/Software/Projects
+      - ../../Projects/:/root/Projects
     ports:
-      - "42424-42434"
+      - "42424-42434:42424-42434"
