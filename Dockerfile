@@ -34,7 +34,7 @@ RUN python -c 'import numpy'
 
 RUN pip install --no-cache-dir --upgrade \
     xgboost==0.81 \
-    intel-tensorflow==1.12.0 \
+    intel-tensorflow==1.13.1 \
     featexp==0.0.5 \
     lime==0.1.1.32 \
     gym==0.9.6 \
