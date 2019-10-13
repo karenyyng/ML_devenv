@@ -25,6 +25,9 @@ RUN conda install -c conda-forge \
 	pandas \
 	matplotlib \
 	xlrd=1.2.0 \
+	spacy=2.2.1 \
+	nltk=3.4.4 \
+	gensim=3.8.1 \
 && conda clean --all
 # RUN conda install pytorch torchvision -c pytorch \
 # && conda clean --all
