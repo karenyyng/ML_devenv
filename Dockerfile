@@ -10,9 +10,6 @@ MAINTAINER Karen Ng <karen.yyng@gmail.com>
 
 RUN conda config --add channels conda-forge
 RUN conda upgrade -y conda && conda clean --all
-RUN conda install -c intel tensorflow \
-    && conda clean --all
-RUN python -c 'import numpy'
 
 RUN conda install -c conda-forge \
 	scikit-learn  \
@@ -37,6 +34,7 @@ RUN pip install --no-cache-dir --upgrade \
     lime==0.1.1.32 \
     gym==0.9.6 \
     recommonmark==0.5.0 \
+    tensorflow==2.0.0 \
     sphinx-markdown-tables \
     hyperopt \
     kaggle \
