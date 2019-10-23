@@ -10,9 +10,6 @@ MAINTAINER Karen Ng <karen.yyng@gmail.com>
 
 RUN conda config --add channels conda-forge
 RUN conda upgrade -y conda && conda clean --all
-RUN conda install -c intel tensorflow \
-    && conda clean --all
-RUN python -c 'import numpy'
 
 RUN conda install -c conda-forge \
 	scikit-learn  \
@@ -25,9 +22,6 @@ RUN conda install -c conda-forge \
 	pandas \
 	matplotlib \
 	xlrd=1.2.0 \
-	spacy=2.2.1 \
-	nltk=3.4.4 \
-	gensim=3.8.1 \
 && conda clean --all
 # RUN conda install pytorch torchvision -c pytorch \
 # && conda clean --all
@@ -40,11 +34,11 @@ RUN pip install --no-cache-dir --upgrade \
     lime==0.1.1.32 \
     gym==0.9.6 \
     recommonmark==0.5.0 \
+    tensorflow==2.0.0 \
     sphinx-markdown-tables \
     hyperopt \
     kaggle \
     imblearn
-
 # check if the installations were successful
 RUN python -c 'import xgboost'
 RUN python -c 'import lime'
@@ -53,3 +47,10 @@ RUN python -c 'import tensorflow'
 RUN python -c 'import featexp'
 RUN python -c 'import pandas'
 RUN python -c 'import gym'
+
+RUN conda install -c conda-forge \
+	spacy=2.2.1 \
+	nltk=3.4.4 \
+	gensim=3.8.1 \
+	beautifulsoup4=4.8.1 \
+&& conda clean --all
