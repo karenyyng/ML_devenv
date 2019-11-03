@@ -1,12 +1,15 @@
 # ======================================================================
-# usage for interactive sessions: 
+# usage for interactive sessions:
 # $ docker-compose run --service-ports ML_devenv bash
 # ======================================================================
 version: "3"
-services: 
-  ML_devenv: 
-    image: karenyng/ml_devenv:latest
+services:
+  ML_devenv:
+    image: karenyng/ml_devenv:nlp0.1
     volumes:
       - ../../Projects/:/root/Projects
+      - /Users/karenyng/.gitconfig:/root/.gitconfig
+      - /Users/karenyng/.gitignore_global:/root/.gitignore_global
+      - /Users/karenyng/.ssh:/root/.ssh
     ports:
       - "42424-42434:42424-42434"
