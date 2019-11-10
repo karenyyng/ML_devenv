@@ -38,7 +38,9 @@ RUN pip install --no-cache-dir --upgrade \
     sphinx-markdown-tables \
     hyperopt \
     kaggle \
-    imblearn
+    imblearn \
+    plotly-express==0.4.1 \
+    holidays==0.9.11
 
 # check if the installations were successful
 RUN python -c 'import xgboost'
